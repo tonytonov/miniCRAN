@@ -41,7 +41,8 @@ Suggests:
     covr,
     withr,
     mockery,
-    testthis
+    testthis,
+    roxygen2
 LazyData: true
 LazyLoad: true
 VignetteBuilder: knitr
