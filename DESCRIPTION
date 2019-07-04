@@ -6,7 +6,8 @@ Authors@R: c(
         email="apdevries@gmail.com"),
     person("Alex", "Chubaty", role="ctb", 
         email="alex.chubaty@gmail.com"),
-    person("Anton", "Antonov", role="ctb", email="tonytonov@gmail.com"),
+    person("Anton", "Antonov", role="ctb", 
+        email="tonytonov@gmail.com"),
     person("Microsoft Corporation", role="cph")
     )
 License: GPL-2
