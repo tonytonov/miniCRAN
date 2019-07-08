@@ -5,26 +5,51 @@
 \title{Delete packages from a miniCRAN repository.}
 \usage{
 deletePackage(pkgs = NULL, path = NULL, type = "source",
-  Rversion = R.version, writePACKAGES = TRUE, deps = TRUE, ...)
+  Rversion = R.version, writePACKAGES = TRUE, deps = TRUE,
+  which = c("Depends", "Imports", "LinkingTo", "Suggests"),
+  recursive = FALSE, reverse = FALSE)
 }
 \arguments{
 \item{pkgs}{Character vector of packages to download}
 
-\item{path}{Destination download path. This path is the root folder of your new repository.}
+\item{path}{Destination download path. This path is the root folder of your
+new repository.}
 
-\item{type}{Possible values are (currently) "source", "mac.binary" and "win.binary": the binary types can be listed and downloaded but not installed on other platforms.  Passed to \code{\link[=download.packages]{download.packages()}}.}
+\item{type}{Possible values are (currently) "source", "mac.binary" and
+"win.binary": the binary types can be listed and downloaded but not
+installed on other platforms.  Passed to \code{\link[=download.packages]{download.packages()}}.}
 
-\item{Rversion}{Version of R. Can be specified as a character string with the two digit R version, e.g. "3.1".  Defaults to \link{R.version}}
+\item{Rversion}{Version of R (only used if \code{type} is not \code{source}.) Defaults to \link{R.version}, but this can be specified as any of the following formats:
+\itemize{
+\item a character string with the two digit R version, e.g. "3.1"
+\item a list with components \code{major} and \code{minor}
+\item the result of \code{\link[=getRversion]{getRversion()}}
+\item the result of \code{\link[=R.version]{R.version()}}
+}}
 
-\item{writePACKAGES}{If TRUE, calls \code{\link[=write_PACKAGES]{write_PACKAGES()}} to update the repository PACKAGES file.}
+\item{writePACKAGES}{If TRUE, calls \code{\link[=write_PACKAGES]{write_PACKAGES()}} to update the
+repository PACKAGES file.}
 
-\item{deps}{logical indicating whether the package reverse dependencies should be removed (default \code{TRUE}).}
+\item{deps}{logical indicating whether the package reverse dependencies should
+be removed (default \code{TRUE}).}
 
-\item{...}{arguments passed over to \code{tools::package_dependencies}: use \code{which}, \code{recursive}, \code{reverse}
-to specify what should happen to dependencies of removed packages}
+\item{which}{a character vector listing the types of
+    dependencies, a subset of
+    \code{c("Depends", "Imports", "LinkingTo", "Suggests", "Enhances")}.
+    Character string \code{"all"} is shorthand for that vector,
+    character string \code{"most"} for the same vector without
+    \code{"Enhances"}.
+  }
+
+\item{recursive}{logical: should (reverse) dependencies of (reverse)
+    dependencies (and so on) be included?}
+
+\item{reverse}{logical: if \code{FALSE} (default), regular
+    dependencies are calculated, otherwise reverse dependencies.}
 }
 \description{
-Delete packages from a miniCRAN repository.
+Arguments \code{which}, \code{recursive} and \code{reverse} are passed over to
+\code{tools::package_dependencies} and allow to specify the deletion behaviour.
 }
 \seealso{
 Other update repo functions: \code{\link{addOldPackage}},

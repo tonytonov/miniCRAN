@@ -87,7 +87,7 @@ pkgList
 }
 \seealso{
 Other update repo functions: \code{\link{addOldPackage}},
-  \code{\link{addPackage}}, \code{\link{makeRepo}},
-  \code{\link{updatePackages}}
+  \code{\link{addPackage}}, \code{\link{deletePackage}},
+  \code{\link{makeRepo}}, \code{\link{updatePackages}}
 }
 \concept{update repo functions}

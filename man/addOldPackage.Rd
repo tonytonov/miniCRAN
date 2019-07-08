@@ -110,7 +110,7 @@ pkgList
 }
 \seealso{
 Other update repo functions: \code{\link{addPackage}},
-  \code{\link{checkVersions}}, \code{\link{makeRepo}},
-  \code{\link{updatePackages}}
+  \code{\link{checkVersions}}, \code{\link{deletePackage}},
+  \code{\link{makeRepo}}, \code{\link{updatePackages}}
 }
 \concept{update repo functions}

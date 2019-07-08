@@ -101,6 +101,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Alex Chubaty \email{alex.chubaty@gmail.com} [contributor]
+  \item Anton Antonov \email{tonytonov@gmail.com} [contributor]
   \item Microsoft Corporation [copyright holder]
 }
 
